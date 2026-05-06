@@ -1,0 +1,29 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+@media (min-width: 768px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.item {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: default;
+  display: block;
+  width: 100%;
+}
+
+.clickable {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.clickable:hover {
+  opacity: 0.85;
+}

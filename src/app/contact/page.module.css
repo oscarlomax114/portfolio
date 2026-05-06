@@ -1,0 +1,88 @@
+.header {
+  margin-bottom: 56px;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  margin-top: 8px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin-top: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 56px;
+}
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1.4fr 1fr;
+    gap: 80px;
+  }
+}
+
+/* ─── Form ─────────────────────────────────────────────────── */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formLabel {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-secondary);
+}
+
+/* ─── Info ──────────────────────────────────────────────────── */
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.infoBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.infoLink {
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  transition: opacity 0.2s ease;
+}
+.infoLink:hover { opacity: 0.6; }
+
+.socialList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.success {
+  font-size: 0.875rem;
+  color: #4caf50;
+}
+
+.errorMsg {
+  font-size: 0.875rem;
+  color: #f44336;
+}
