@@ -1,6 +1,6 @@
 export interface ProjectSection {
   heading: string;
-  body: string;
+  body?: string;
   images?: string[]; // Replace with actual image paths
   imageAspectRatio?: string; // e.g. "1/1", "4/3" — defaults to "16/10"
   subsection?: boolean; // visually nested under the previous section (no number)
