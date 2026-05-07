@@ -262,6 +262,75 @@ export const projects: Project[] = [
     relatedProjects: ["tinkorporated-dosage", "moviebase-api-clients"],
   },
 
+  // ─── EXPERIMENTAL ─────────────────────────────────────────────────
+  {
+    title: "Illustrator Setup Automation",
+    slug: "illustrator-setup-automation",
+    category: "Experimental",
+    categories: ["Experimental"],
+    featured: false,
+    description:
+      "A set of Illustrator scripts written with AI to automate production file setup and routing, reducing a repetitive manual process to a one-click action.",
+    longDescription:
+      "Illustrator scripts that automate file setup, factory-specific formatting, and production routing across apparel, stickers, hats, and general items. Built with AI assistance to eliminate manual prep and reduce setup errors.",
+    tags: [
+      "Automation",
+      "Illustrator",
+      "Scripting",
+      "AI-Assisted",
+      "Production",
+    ],
+    role: "Workflow Developer",
+    tools: ["Illustrator", "JavaScript", "AI Tools"],
+    year: "2024",
+    type: "Production Automation",
+    heroImage: "/images/projects/illustrator-automation/spt-cap-1.png",
+    galleryImages: [
+      "/images/projects/illustrator-automation/spt-cap-1.png",
+      "/images/projects/illustrator-automation/spt-cap-2.png",
+      "/images/projects/illustrator-automation/spt-apparel-1.png",
+      "/images/projects/illustrator-automation/spt-apparel-2.png",
+      "/images/projects/illustrator-automation/spt-sticker-1.png",
+      "/images/projects/illustrator-automation/spt-sticker-2.png",
+      "/images/projects/illustrator-automation/spt-gen-1.png",
+      "/images/projects/illustrator-automation/spt-gen-2.png",
+    ],
+    sections: [
+      {
+        heading: "Overview",
+        body: "A set of Illustrator scripts written with AI to automate production file setup and routing. The goal was to take a repetitive manual process and reduce it to a one-click action, while ensuring every file met factory-specific requirements.",
+      },
+      {
+        heading: "What It Does",
+        body: "The scripts handle setup and routing across four categories: Apparel — built on required templates with defined color callouts, routed to a specific factory. Stickers — includes die cut / kiss cut setup, rasterized output, routed to a dedicated factory. Hats — supports multiple artwork pieces, isolates them across artboards, routed to its factory. General items — isolates a single piece of artwork (keychains, ornaments, etc.) and routes based on item type. For the first three, the destination is fixed. For general items, the script determines the correct factory and sends files to the appropriate location (SharePoint or SFTP).",
+        images: [
+          "/images/projects/illustrator-automation/spt-cap-1.png",
+          "/images/projects/illustrator-automation/spt-cap-2.png",
+          "/images/projects/illustrator-automation/spt-apparel-1.png",
+          "/images/projects/illustrator-automation/spt-apparel-2.png",
+          "/images/projects/illustrator-automation/spt-sticker-1.png",
+          "/images/projects/illustrator-automation/spt-sticker-2.png",
+          "/images/projects/illustrator-automation/spt-gen-1.png",
+          "/images/projects/illustrator-automation/spt-gen-2.png",
+        ],
+      },
+      {
+        heading: "System Behavior",
+        body: "Each script standardizes the file and applies setup requirements such as layer structure, template placement, color callouts, rasterization, die/kiss cut paths, and multi-artboard separation. The output is then placed directly into the correct production pipeline. This removes manual prep, manual routing, and reduces setup errors.",
+      },
+      {
+        heading: "Impact",
+        body: "Time per setup: 3–7 minutes → ~1 click\nWeekly volume: 10 artists × 15 setups = 150 setups/week\nWeekly time saved: 7.5–17.5 hours\nAnnual time saved: ~390 to 910 hours\nLabor savings at $30/hr: ~$11,700 to ~$27,300/year",
+      },
+      {
+        heading: "Extension (Not Implemented)",
+        body: "The scripts handled file prep and delivery, but not downstream system updates. Integration with Business Central would have allowed automatic updates across internal systems, extending the same time savings further.",
+      },
+    ],
+    links: [],
+    relatedProjects: ["tinkorporated-dosage"],
+  },
+
   // ─── PRODUCT & BRAND ──────────────────────────────────────────────
   {
     title: "Venus Fly Trap Grabber",
@@ -621,74 +690,6 @@ export const projects: Project[] = [
     relatedProjects: ["delusional-cover-art"],
   },
 
-  // ─── EXPERIMENTAL ─────────────────────────────────────────────────
-  {
-    title: "Illustrator Setup Automation",
-    slug: "illustrator-setup-automation",
-    category: "Experimental",
-    categories: ["Experimental"],
-    featured: false,
-    description:
-      "A set of Illustrator scripts written with AI to automate production file setup and routing, reducing a repetitive manual process to a one-click action.",
-    longDescription:
-      "Illustrator scripts that automate file setup, factory-specific formatting, and production routing across apparel, stickers, hats, and general items. Built with AI assistance to eliminate manual prep and reduce setup errors.",
-    tags: [
-      "Automation",
-      "Illustrator",
-      "Scripting",
-      "AI-Assisted",
-      "Production",
-    ],
-    role: "Workflow Developer",
-    tools: ["Illustrator", "JavaScript", "AI Tools"],
-    year: "2024",
-    type: "Production Automation",
-    heroImage: "/images/projects/illustrator-automation/spt-cap-1.png",
-    galleryImages: [
-      "/images/projects/illustrator-automation/spt-cap-1.png",
-      "/images/projects/illustrator-automation/spt-cap-2.png",
-      "/images/projects/illustrator-automation/spt-apparel-1.png",
-      "/images/projects/illustrator-automation/spt-apparel-2.png",
-      "/images/projects/illustrator-automation/spt-sticker-1.png",
-      "/images/projects/illustrator-automation/spt-sticker-2.png",
-      "/images/projects/illustrator-automation/spt-gen-1.png",
-      "/images/projects/illustrator-automation/spt-gen-2.png",
-    ],
-    sections: [
-      {
-        heading: "Overview",
-        body: "A set of Illustrator scripts written with AI to automate production file setup and routing. The goal was to take a repetitive manual process and reduce it to a one-click action, while ensuring every file met factory-specific requirements.",
-      },
-      {
-        heading: "What It Does",
-        body: "The scripts handle setup and routing across four categories: Apparel — built on required templates with defined color callouts, routed to a specific factory. Stickers — includes die cut / kiss cut setup, rasterized output, routed to a dedicated factory. Hats — supports multiple artwork pieces, isolates them across artboards, routed to its factory. General items — isolates a single piece of artwork (keychains, ornaments, etc.) and routes based on item type. For the first three, the destination is fixed. For general items, the script determines the correct factory and sends files to the appropriate location (SharePoint or SFTP).",
-        images: [
-          "/images/projects/illustrator-automation/spt-cap-1.png",
-          "/images/projects/illustrator-automation/spt-cap-2.png",
-          "/images/projects/illustrator-automation/spt-apparel-1.png",
-          "/images/projects/illustrator-automation/spt-apparel-2.png",
-          "/images/projects/illustrator-automation/spt-sticker-1.png",
-          "/images/projects/illustrator-automation/spt-sticker-2.png",
-          "/images/projects/illustrator-automation/spt-gen-1.png",
-          "/images/projects/illustrator-automation/spt-gen-2.png",
-        ],
-      },
-      {
-        heading: "System Behavior",
-        body: "Each script standardizes the file and applies setup requirements such as layer structure, template placement, color callouts, rasterization, die/kiss cut paths, and multi-artboard separation. The output is then placed directly into the correct production pipeline. This removes manual prep, manual routing, and reduces setup errors.",
-      },
-      {
-        heading: "Impact",
-        body: "Time per setup: 3–7 minutes → ~1 click\nWeekly volume: 10 artists × 15 setups = 150 setups/week\nWeekly time saved: 7.5–17.5 hours\nAnnual time saved: ~390 to 910 hours\nLabor savings at $30/hr: ~$11,700 to ~$27,300/year",
-      },
-      {
-        heading: "Extension (Not Implemented)",
-        body: "The scripts handled file prep and delivery, but not downstream system updates. Integration with Business Central would have allowed automatic updates across internal systems, extending the same time savings further.",
-      },
-    ],
-    links: [],
-    relatedProjects: ["tinkorporated-dosage"],
-  },
 ];
 
 // Helper to get projects by category filter
