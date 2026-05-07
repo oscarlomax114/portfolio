@@ -141,7 +141,9 @@ export default async function CaseStudyPage({
                 {section.images && section.images.length > 0 && (
                   <div
                     className={styles.sectionImages}
-                    style={section.imageColumns ? { '--img-cols': section.imageColumns } as React.CSSProperties : undefined}
+                    style={section.imageGrid
+                      ? { gridTemplateColumns: section.imageGrid } as React.CSSProperties
+                      : section.imageColumns ? { '--img-cols': section.imageColumns } as React.CSSProperties : undefined}
                   >
                     {section.images.map((img, j) => (
                       <ProjectImage
@@ -151,6 +153,7 @@ export default async function CaseStudyPage({
                         aspectRatio={section.imageAspectRatio || "16/10"}
                         animated={section.animated?.[j] ?? false}
                         contain={section.imageContain?.[j] ?? false}
+                        fillHeight={section.imageFillHeight?.[j] ?? false}
                         scale={section.imageScale}
                         objectPosition={section.imagePosition}
                       />

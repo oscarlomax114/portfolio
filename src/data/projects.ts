@@ -5,9 +5,11 @@ export interface ProjectSection {
   imageAspectRatio?: string; // e.g. "1/1", "4/3" — defaults to "16/10"
   subsection?: boolean; // visually nested under the previous section (no number)
   imageColumns?: number; // force N columns for images on desktop (e.g. 3)
+  imageGrid?: string; // custom grid-template-columns value (e.g. "1fr 1fr 0.5fr")
   imageScale?: number; // e.g. 1.3 — scales image up within its frame to crop whitespace
   imagePosition?: string; // e.g. "center 45%" — CSS object-position for centering
   imageContain?: boolean[]; // parallel to images — true = object-fit contain (show full image)
+  imageFillHeight?: boolean[]; // parallel to images — true = stretch to row height, auto width
   animated?: boolean[]; // parallel to images — true = use <img> for animated webp/gif
   link?: { label: string; url: string }; // optional link next to heading
 }
@@ -67,15 +69,21 @@ export const projects: Project[] = [
     ],
     year: "2024–Present",
     type: "Brand System / Ecommerce",
-    heroImage: "/images/projects/tinkorporated/tink-hero.png",
-    heroScale: 1.3,
-    heroPosition: "center 55%",
+    heroImage: "/images/projects/tinkorporated/tink-new-hero.png",
     galleryImages: [
-      "/images/projects/tinkorporated/product-hero.jpg",
-      "/images/projects/tinkorporated/pill-bottle.jpg",
-      "/images/projects/tinkorporated/label-system.jpg",
-      "/images/projects/tinkorporated/ecommerce.jpg",
-      "/images/projects/tinkorporated/campaign.jpg",
+      "/images/projects/tinkorporated/tink-hero.png",
+      "/images/projects/tinkorporated/dosage-fig-1.png",
+      "/images/projects/tinkorporated/dosage-fig-2.png",
+      "/images/projects/tinkorporated/dosage-fig-3.png",
+      "/images/projects/tinkorporated/dosage-label-v2.png",
+      "/images/projects/tinkorporated/dosage-bottle-1.webp",
+      "/images/projects/tinkorporated/dosage-bag.png",
+      "/images/projects/tinkorporated/rappacks-label.png",
+      "/images/projects/tinkorporated/dosage-logo.png",
+      "/images/projects/tinkorporated/tink-1.png",
+      "/images/projects/tinkorporated/tink-2.png",
+      "/images/projects/tinkorporated/tink-3.png",
+      "/images/projects/tinkorporated/tink-4.png",
     ],
     sections: [
       // 1. OVERVIEW
@@ -87,39 +95,50 @@ export const projects: Project[] = [
       {
         heading: "Core Thesis",
         body: "Tinkorporated's emphasis on the relationship between art and commerce starts in its naming convention. \"Tink\" refers to the sound a shimmer makes, the glitter of gold or the feeling seeing a loved one smile — a symbol of beauty and perfect form. \"Incorporated\" refers to industry, capitalism, the things that keep the lights on and food on the table, but maybe aren't as polished or glamorous. One side is the moments, the things that actually matter to you, while the other is the machine that makes those things possible. Even art has a budget and a deadline. This dichotomy can be paralleled to other dualities in life and Tinkorporated focuses to explore this tension.",
+        images: ["/images/projects/tinkorporated/tink-hero.png"],
+        imageAspectRatio: "16/9",
+        imageScale: 1.3,
       },
-      // 3. VISUAL LANGUAGE: PHARMACORE
+      // 3. SYSTEM ARCHITECTURE
+      {
+        heading: "System Architecture",
+        body: "Tinkorporated operates as a parent system. Sub-brands sit beneath it — Dosage and Rappacks are primary examples. Each sub-brand tries to adhere to a similar set of rules so they all operate within the same underlying logic.\n\nProducts are structured as compounds. Each item is assigned a compound identifier, and each instance is framed as a dose. This creates a consistent naming and packaging system across everything, regardless of the specific product.\n\nVisually and conceptually, each sub-brand maintains its own identity, but all exist within the same pharmacore framework — prescription-style labeling, standardized formats, and a shared tone. The goal is for everything to feel distinct, but still clearly part of the same world.\n\nThis mirrors how conglomerates operate: multiple brands, different products, but all owned and structured under a single parent. Tinkorporated functions the same way — not as a brand with extensions, but as a system that new ideas plug into.",
+      },
+      // 4. VISUAL LANGUAGE: PHARMACORE
       {
         heading: "Visual Language: Pharmacore",
-        body: "The visual system serves function. Clinical typography enforces authority and readability. Regulatory layout structure mirrors pharmaceutical labeling — dense, grid-aligned, hierarchical. The orange / white / black palette signals caution and institutional control. Instructional tone replaces promotional language. Each element maps to meaning: control, legitimacy, systemization.",
+        body: "Pharmacore is a visual system built from pharmaceutical and clinical references, applied outside of their original context.\n\nIt pulls from prescription labels, medical packaging, and institutional design — standardized clinical typography, a heavy black and white foundation, and controlled use of accent colors drawn from the space (pill bottle orange, scrub blues and purples). Information is presented through dense blocks, grid-based layouts, and clear hierarchy.\n\nSupporting elements come from the same environment — warning icons, dosage markers, regulatory symbols — used to reinforce the system rather than decorate it. Everything is treated as part of a consistent way to label and present work.\n\nThe direction comes from observing how other \"workwear\" aesthetics have moved into culture — construction, outdoor, utility — and extending that idea into a space that hasn't been explored in the same way: pharmacy and clinical environments.\n\nIt functions as an evolving framework. The labeling system, compound structure, and packaging formats are the most direct expressions of it, with the intent to expand into other areas — color systems, materials, and product categories — while maintaining the same underlying logic.",
         images: ["/images/projects/tinkorporated/rappacks-label.png"],
         imageAspectRatio: "4/1",
         imageContain: [true],
       },
-      // 4. SYSTEM ARCHITECTURE
-      {
-        heading: "System Architecture",
-        body: "Tinkorporated operates as a parent system. Sub-brands sit underneath it — Dosage is the primary example. Each sub-brand follows the same structural rules: controlled releases, compound identifiers, distribution logic. New product lines plug into the existing framework without requiring a new identity. The architecture is operational, not decorative.",
-      },
       // 5. PRODUCT IMPLEMENTATION: DOSAGE
       {
         heading: "Product Implementation: Dosage",
-        body: "Dosage is the first product line operating within the Tinkorporated system. It originated from a specific gap: the lack of Black desk collectibles. The translation into the system maps directly — figures become compounds, packaging becomes prescription containers, variants become controlled distribution tiers.",
+        body: "Dosage is a product line within the Tinkorporated system focused on collectible figures.\n\nIt came from a gap — there aren't many desk collectibles centered on Black characters from popular culture. Dosage was built as a response to that.\n\nThe first run consists of 10 figures based on recognizable characters drawn from that space. The models were generated using AI tools and then produced as physical objects through 3D printing.\n\nWithin the system, each figure is treated as a compound. That structure carries through naming, labeling, and packaging.\n\nInstead of using standard collectible formats like blister packs or boxed figures, the pieces are housed in prescription-style pill bottles. This ties directly into the Pharmacore direction while also creating something more visually distinct — the bright orange containers function as both packaging and a key part of the identity.",
         images: ["/images/projects/tinkorporated/dosage-logo.png"],
         imageAspectRatio: "2/1",
         imageContain: [true],
       },
       {
-        heading: "Release Formats",
+        heading: "Dosage Figures",
         subsection: true,
-        body: "Mystery — sealed selection, contents unknown until opening. Open Selection — visible product, buyer chooses compound. XR (Extended Release) — limited variant with modified packaging and distribution window. Each format controls access differently while using the same packaging infrastructure.",
-        images: ["/images/projects/tinkorporated/packaging-01.jpg", "/images/projects/tinkorporated/packaging-02.jpg"],
+        images: [
+          "/images/projects/tinkorporated/dosage-fig-1.png",
+          "/images/projects/tinkorporated/dosage-fig-2.png",
+          "/images/projects/tinkorporated/dosage-fig-3.png",
+        ],
+        imageAspectRatio: "3/4",
+        imageColumns: 3,
       },
       // 6. PACKAGING SYSTEM
       {
         heading: "Packaging System",
         body: "The packaging is built around a bottle format with structured label fields: compound number, batch identifier, dosage instructions, and quantity. Variant indicators differentiate release types without breaking the label hierarchy. A QR code replaces the traditional barcode — functional for tracking while maintaining the clinical format. The system is designed for clarity and repeatability across any SKU.",
-        images: ["/images/projects/tinkorporated/label-system.jpg"],
+        images: ["/images/projects/tinkorporated/dosage-label-v2.png", "/images/projects/tinkorporated/dosage-bottle-1.webp", "/images/projects/tinkorporated/dosage-bag.png"],
+        imageAspectRatio: "1/1",
+        imageColumns: 3,
+        imageContain: [true, false, true],
       },
       // 7. PLATFORM
       {

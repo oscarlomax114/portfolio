@@ -10,6 +10,7 @@ interface ProjectImageProps {
   scale?: number;
   objectPosition?: string;
   contain?: boolean; // use object-fit: contain to show full image
+  fillHeight?: boolean; // stretch to row height, auto width (for mixed-ratio grids)
 }
 
 const imageExtensions = [".jpg", ".jpeg", ".png", ".webp", ".avif", ".gif", ".svg"];
@@ -27,6 +28,7 @@ export default function ProjectImage({
   scale,
   objectPosition,
   contain = false,
+  fillHeight = false,
 }: ProjectImageProps) {
   if (!isRealImage(src)) {
     return <MediaPlaceholder label={alt} aspectRatio={aspectRatio} />;
@@ -46,6 +48,20 @@ export default function ProjectImage({
           src={src}
           alt={alt}
           className={styles.animatedImage}
+          style={imageStyle}
+        />
+      </div>
+    );
+  }
+
+  if (fillHeight) {
+    return (
+      <div className={styles.wrapperFillHeight}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={src}
+          alt={alt}
+          className={styles.fillHeightImage}
           style={imageStyle}
         />
       </div>
